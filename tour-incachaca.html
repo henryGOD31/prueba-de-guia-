@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Incachaca — Tour Virtual 360°</title>
+    <link rel="stylesheet" href="tour-incachaca-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- PANTALLA DE CARGA -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-icon"><i class="fas fa-water"></i></div>
+            <h1>Incachaca</h1>
+            <p>Cargando tour virtual 360°...</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="progress-text" id="progress-text">Preparando panorámica...</span>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE INICIO -->
+    <div id="start-screen" style="display:none;">
+        <div class="start-content">
+            <div class="start-logo"><i class="fas fa-mountain-sun"></i></div>
+            <h1>Incachaca</h1>
+            <h2>Tour Virtual 360°</h2>
+            <p>Recorre las 5 paradas de Incachaca en vista panorámica 360°. Arrastra para mirar alrededor y navega entre los puntos del sendero.</p>
+            <div class="start-controls-info">
+                <div class="control-item">
+                    <i class="fas fa-hand-pointer"></i>
+                    <span>Arrastra para mirar alrededor</span>
+                </div>
+                <div class="control-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Clic en marcadores para avanzar</span>
+                </div>
+                <div class="control-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Compatible con celulares</span>
+                </div>
+            </div>
+            <button id="btn-start" class="btn-start">
+                <i class="fas fa-play"></i> Iniciar Recorrido
+            </button>
+        </div>
+    </div>
+
+    <!-- CANVAS 360° -->
+    <canvas id="tour-canvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" style="display:none;">
+
+        <!-- Barra superior -->
+        <div class="hud-top">
+            <div class="hud-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="location-name">Parada 1: Puente Colgante</span>
+            </div>
+            <div class="hud-actions">
+                <button class="hud-btn" id="btn-map" title="Mapa"><i class="fas fa-map"></i></button>
+                <button class="hud-btn" id="btn-help" title="Ayuda"><i class="fas fa-question"></i></button>
+                <button class="hud-btn" id="btn-fullscreen" title="Pantalla completa"><i class="fas fa-expand"></i></button>
+            </div>
+        </div>
+
+        <!-- Barra de paradas (navegación inferior) -->
+        <div class="stops-bar" id="stops-bar">
+            <button class="stop-btn active" data-stop="0">
+                <span class="stop-num">1</span>
+                <span class="stop-label">Puente</span>
+            </button>
+            <div class="stop-connector"></div>
+            <button class="stop-btn" data-stop="1">
+                <span class="stop-num">2</span>
+                <span class="stop-label">Velo</span>
+            </button>
+            <div class="stop-connector"></div>
+            <button class="stop-btn" data-stop="2">
+                <span class="stop-num">3</span>
+                <span class="stop-label">Hidro</span>
+            </button>
+            <div class="stop-connector"></div>
+            <button class="stop-btn" data-stop="3">
+                <span class="stop-num">4</span>
+                <span class="stop-label">Ñustas</span>
+            </button>
+            <div class="stop-connector"></div>
+            <button class="stop-btn" data-stop="4">
+                <span class="stop-num">5</span>
+                <span class="stop-label">Mirador</span>
+            </button>
+        </div>
+
+        <!-- Navegación anterior/siguiente -->
+        <button class="nav-arrow nav-prev" id="btn-prev" title="Parada anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow nav-next" id="btn-next" title="Siguiente parada">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Panel de información -->
+        <div id="info-panel" class="info-panel" style="display:none;">
+            <button class="info-close" id="btn-close-info"><i class="fas fa-times"></i></button>
+            <div class="info-panel-icon"><i class="fas fa-info-circle" id="info-icon-i"></i></div>
+            <h3 id="info-title">Título</h3>
+            <p id="info-description">Descripción.</p>
+            <div class="info-details" id="info-details"></div>
+            <div class="info-tags" id="info-tags"></div>
+        </div>
+
+        <!-- Minimapa -->
+        <div id="minimap" class="minimap" style="display:none;">
+            <div class="minimap-header">
+                <span>Sendero de Incachaca</span>
+                <button class="minimap-close" id="btn-close-map"><i class="fas fa-times"></i></button>
+            </div>
+            <canvas id="minimap-canvas" width="280" height="320"></canvas>
+            <div class="minimap-legend">
+                <div class="legend-item"><span class="dot dot-blue"></span> Tu posición</div>
+                <div class="legend-item"><span class="dot dot-yellow"></span> Paradas</div>
+            </div>
+        </div>
+
+        <!-- Panel de ayuda -->
+        <div id="help-panel" class="help-panel" style="display:none;">
+            <button class="info-close" id="btn-close-help"><i class="fas fa-times"></i></button>
+            <h3><i class="fas fa-hand-pointer"></i> Controles</h3>
+            <div class="help-grid">
+                <div class="help-item"><kbd>Arrastrar</kbd><span>Mirar alrededor</span></div>
+                <div class="help-item"><kbd>Scroll</kbd><span>Zoom in/out</span></div>
+                <div class="help-item"><kbd>← →</kbd><span>Parada anterior/siguiente</span></div>
+                <div class="help-item"><kbd>M</kbd><span>Mapa del sendero</span></div>
+                <div class="help-item"><kbd>Clic marcador</kbd><span>Ir a parada</span></div>
+                <div class="help-item"><kbd>I</kbd><span>Info de la parada</span></div>
+            </div>
+        </div>
+
+        <!-- Indicador de transición -->
+        <div id="transition-overlay" class="transition-overlay" style="display:none;">
+            <div class="transition-text" id="transition-text">Caminando...</div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="tour-incachaca-script.js"></script>
+</body>
+</html>

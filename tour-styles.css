@@ -1,0 +1,654 @@
+/* ============================================================
+   DIN KONG PARK — Tour Virtual 3D
+   Estilos de interfaz · Responsable: Estudiante 1 (Interfaz)
+   ============================================================ */
+
+/* ===== VARIABLES ===== */
+:root {
+    --color-primario: #0f4c3a;
+    --color-acento: #e8a87c;
+    --color-oscuro: #0a0a0a;
+    --color-claro: #ffffff;
+    --font: 'Poppins', sans-serif;
+    --glass: rgba(0, 0, 0, 0.6);
+    --glass-light: rgba(0, 0, 0, 0.4);
+    --blur: blur(20px);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+    background: #000;
+    color: #fff;
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+}
+
+/* ===== CANVAS 3D ===== */
+#tour-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* ============================================================
+   PANTALLA DE CARGA
+   ============================================================ */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #0a1a14 0%, #0f4c3a 50%, #1a6b50 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.loader-content {
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.loader-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: rgba(232, 168, 124, 0.15);
+    border: 2px solid var(--color-acento);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-acento);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(232,168,124,0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px 10px rgba(232,168,124,0.1); }
+}
+
+#loading-screen h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+#loading-screen p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-acento), #f0c27f);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   PANTALLA DE INICIO
+   ============================================================ */
+#start-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(10, 26, 20, 0.92);
+    backdrop-filter: var(--blur);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start-content {
+    max-width: 500px;
+    padding: 2rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.start-logo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--color-primario), #2d8f6f);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+#start-screen h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+#start-screen h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-acento);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+#start-screen > .start-content > p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.start-controls-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.control-item i {
+    color: var(--color-acento);
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+}
+
+.btn-start {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--color-acento), #d4785c);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 6px 25px rgba(232, 168, 124, 0.35);
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(232, 168, 124, 0.5);
+}
+
+/* ============================================================
+   HUD — Interfaz en juego
+   ============================================================ */
+#hud {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+#hud > * {
+    pointer-events: auto;
+}
+
+/* Barra superior */
+.hud-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5), transparent);
+}
+
+.hud-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--glass-light);
+    backdrop-filter: var(--blur);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hud-location i {
+    color: var(--color-acento);
+}
+
+.hud-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hud-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--glass-light);
+    backdrop-filter: var(--blur);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.hud-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* Crosshair */
+.crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.crosshair-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* Indicador de interacción */
+.interaction-hint {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: hintBounce 1.5s ease infinite;
+}
+
+@keyframes hintBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.interaction-hint i {
+    color: var(--color-acento);
+}
+
+/* ============================================================
+   MINI-MAPA
+   ============================================================ */
+.minimap {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 300px;
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.3s ease;
+}
+
+.minimap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.minimap-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.minimap-close:hover { color: #fff; }
+
+#minimap-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.minimap-legend {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-blue { background: #4fc3f7; }
+.dot-yellow { background: #ffd54f; }
+
+/* ============================================================
+   PANEL DE INFORMACIÓN
+   ============================================================ */
+.info-panel {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 320px;
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    animation: slideInRight 0.4s ease;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.info-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: rgba(255,255,255,0.6);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.info-close:hover { background: rgba(255,255,255,0.2); color: #fff; }
+
+.info-panel-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-primario), #2d8f6f);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.info-panel h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.info-panel p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.info-tag {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    color: var(--color-acento);
+    border: 1px solid rgba(232,168,124,0.2);
+}
+
+/* ============================================================
+   PANEL DE AYUDA
+   ============================================================ */
+.help-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    animation: fadeInUp 0.3s ease;
+}
+
+.help-panel h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.help-panel h3 i { color: var(--color-acento); }
+
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+.help-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.help-item kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-family: var(--font);
+    color: #fff;
+}
+
+/* ============================================================
+   CONTROLES MÓVILES — Joysticks
+   Responsable: Estudiante 2 (Navegación)
+   ============================================================ */
+#mobile-controls {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    pointer-events: none;
+}
+
+#mobile-controls > * {
+    pointer-events: auto;
+}
+
+.joystick-container {
+    position: absolute;
+    bottom: 2.5rem;
+}
+
+.joystick-left { left: 2rem; }
+.joystick-right { right: 2rem; }
+
+.joystick-base {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystick-stick {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    transition: none;
+    touch-action: none;
+}
+
+.mobile-action-btn {
+    position: absolute;
+    bottom: 10rem;
+    right: 2.5rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(232, 168, 124, 0.3);
+    border: 2px solid var(--color-acento);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.mobile-action-btn:active {
+    background: rgba(232, 168, 124, 0.6);
+    transform: scale(0.9);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .hud-top { padding: 0.7rem 1rem; }
+    .hud-location { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+    .hud-btn { width: 36px; height: 36px; font-size: 0.8rem; }
+
+    .minimap {
+        width: 220px;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .info-panel {
+        width: calc(100% - 2rem);
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .help-panel {
+        width: calc(100% - 2rem);
+    }
+
+    #start-screen h1 { font-size: 1.6rem; }
+
+    .joystick-base {
+        width: 100px;
+        height: 100px;
+    }
+
+    .joystick-stick {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .start-controls-info { gap: 0.5rem; }
+    .control-item { padding: 0.5rem 0.8rem; font-size: 0.78rem; }
+}

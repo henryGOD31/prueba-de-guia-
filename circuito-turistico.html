@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuito Turístico del Valle - Cochabamba</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== NAVEGACIÓN ===== -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo"><i class="fas fa-mountain"></i> Circuito del Valle</a>
+        <ul class="nav-links">
+            <li><a href="#ruta">La Ruta</a></li>
+            <li><a href="#corani">Corani</a></li>
+            <li><a href="#incachaca">Incachaca</a></li>
+            <li><a href="#dinkong">Din Kong</a></li>
+            <li><a href="#paquetes">Paquetes</a></li>
+            <li><a href="#clima">Clima</a></li>
+            <li><a href="#tips">Tips</a></li>
+        </ul>
+        <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-heart"></i> &nbsp; Experiencia para Parejas</div>
+            <h1>
+                Circuito Turístico del Valle
+                <span>Cochabamba, Bolivia</span>
+            </h1>
+            <p>Descubre tres destinos mágicos en un solo recorrido. Naturaleza, aventura y diversión diseñados para parejas que buscan momentos inolvidables.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="number">3</div>
+                    <div class="label">Destinos</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">1</div>
+                    <div class="label">Día completo</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">128</div>
+                    <div class="label">Km de ruta</div>
+                </div>
+            </div>
+            <a href="#ruta" class="btn-primary">Explorar el Circuito</a>
+            <a href="#corani" class="btn-secondary">Ver Destinos</a>
+        </div>
+    </section>
+
+    <!-- ===== RUTA OVERVIEW ===== -->
+    <section class="route-overview" id="ruta">
+        <span class="section-label"><i class="fas fa-route"></i> &nbsp; El Recorrido</span>
+        <h2 class="section-title">Tu Ruta de Aventura</h2>
+        <p class="section-subtitle">Un circuito cuidadosamente diseñado que conecta tres joyas de Cochabamba en una experiencia única para parejas.</p>
+        <div class="route-timeline fade-up">
+            <div class="route-stop">
+                <div class="route-stop-icon"><i class="fas fa-water"></i></div>
+                <h4>Laguna Corani</h4>
+                <p>Punto de partida · 40 km</p>
+            </div>
+            <div class="route-connector"></div>
+            <div class="route-stop">
+                <div class="route-stop-icon"><i class="fas fa-leaf"></i></div>
+                <h4>Incachaca</h4>
+                <p>Bosque de niebla · 88 km</p>
+            </div>
+            <div class="route-connector"></div>
+            <div class="route-stop">
+                <div class="route-stop-icon"><i class="fas fa-umbrella-beach"></i></div>
+                <h4>Din Kong Park</h4>
+                <p>Diversión total · Resort</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINO 1: LAGUNA CORANI
+         ============================================================ -->
+    <section class="destination" id="corani">
+        <div class="destination-number">01</div>
+        <div class="destination-container">
+
+            <!-- Encabezado con imagen principal -->
+            <div class="destination-header fade-up">
+                <div>
+                    <span class="dest-tag tag-blue"><i class="fas fa-flag"></i> &nbsp; Punto de Partida</span>
+                    <h2 class="dest-title">Laguna Corani</h2>
+                    <p class="dest-description">
+                        Ubicada a 2,750 metros sobre el nivel del mar y a tan solo 40 km de la ciudad de Cochabamba,
+                        la Laguna Corani es una joya turística que seduce con sus paisajes impresionantes, paseos en bote
+                        sobre aguas cristalinas y la deliciosa gastronomía de trucha y pejerrey fresco.
+                        El punto de inicio perfecto para tu aventura en pareja.
+                    </p>
+                    <a href="#corani-puntos" class="btn-primary btn-sm">
+                        <i class="fas fa-map-marked-alt"></i> &nbsp; Ver Puntos de Interés
+                    </a>
+                    <a href="tour-corani.html" class="btn-primary btn-sm btn-tour" target="_blank">
+                        <i class="fas fa-vr-cardboard"></i> &nbsp; Tour Virtual 360°
+                    </a>
+                </div>
+                <div class="dest-image-container" id="img-corani">
+                    <!-- Reemplaza src con tu imagen de Laguna Corani -->
+                    <img src="" alt="Laguna Corani - Vista panorámica">
+                    <div class="img-fallback dest-image-placeholder">
+                        <i class="fas fa-camera"></i>
+                        <span>Imagen de Laguna Corani</span>
+                        <span class="img-note">Agrega tu imagen aquí</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de información -->
+            <div class="info-grid fade-up">
+                <div class="info-card">
+                    <div class="info-card-icon icon-blue"><i class="fas fa-clock"></i></div>
+                    <h4>Horario</h4>
+                    <p>7:00 AM - 6:00 PM</p>
+                    <div class="detail">Todos los días</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-green"><i class="fas fa-ticket-alt"></i></div>
+                    <h4>Entrada</h4>
+                    <p>Bs 5 por persona</p>
+                    <div class="detail">Parque Ecológico K'achi</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-orange"><i class="fas fa-ship"></i></div>
+                    <h4>Paseo en Bote</h4>
+                    <p>Bs 10 por persona</p>
+                    <div class="detail">Recorrido de 15 minutos</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-purple"><i class="fas fa-utensils"></i></div>
+                    <h4>Gastronomía</h4>
+                    <p>Desde Bs 30</p>
+                    <div class="detail">Trucha y pejerrey fresco</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-red"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Ubicación</h4>
+                    <p>40 km de Cochabamba</p>
+                    <div class="detail">Ruta a Colomi, 1h aprox.</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-teal"><i class="fas fa-bus"></i></div>
+                    <h4>Transporte</h4>
+                    <p>Av. 9 de Abril y Oquendo</p>
+                    <div class="detail">Buses diarios a Colomi</div>
+                </div>
+            </div>
+
+            <!-- Puntos de Interés con imágenes -->
+            <div class="poi-section" id="corani-puntos">
+                <h3 class="poi-section-title">Puntos de Interés en Corani</h3>
+                <p class="poi-section-sub">Recorrido por los lugares imperdibles de la laguna</p>
+                <div class="poi-list fade-up">
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Mirador de la Represa">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-blue">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-blue">1</div>
+                            <div class="poi-content">
+                                <h4>Mirador de la Represa</h4>
+                                <p>Vista panorámica de la represa y la laguna. Punto ideal para fotos en pareja con el paisaje montañoso de fondo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Parque Ecológico K'achi">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-blue">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-blue">2</div>
+                            <div class="poi-content">
+                                <h4>Parque Ecológico K'achi</h4>
+                                <p>Cascadas naturales y una laguna turquesa rodeada de vegetación. Senderos para caminar en pareja en contacto con la naturaleza.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Embarcadero de Botes">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-blue">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-blue">3</div>
+                            <div class="poi-content">
+                                <h4>Embarcadero de Botes</h4>
+                                <p>Paseos románticos en bote sobre las aguas tranquilas de la laguna. Una experiencia imperdible para parejas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Zona Gastronómica">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-blue">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-blue">4</div>
+                            <div class="poi-content">
+                                <h4>Zona Gastronómica</h4>
+                                <p>Restaurantes con trucha y pejerrey recién pescado. Disfruta de la comida típica con vista a la laguna.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Cabañas y Hospedaje">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-blue">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-blue">5</div>
+                            <div class="poi-content">
+                                <h4>Cabañas & Hospedaje</h4>
+                                <p>Cabañas para parejas desde Bs 250/persona con desayuno y almuerzo incluido. Ideal para extender la estadía.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINO 2: INCACHACA
+         ============================================================ -->
+    <section class="destination" id="incachaca">
+        <div class="destination-number">02</div>
+        <div class="destination-container">
+
+            <div class="destination-header fade-up reverse">
+                <div>
+                    <span class="dest-tag tag-green"><i class="fas fa-hiking"></i> &nbsp; Aventura Natural</span>
+                    <h2 class="dest-title">Incachaca</h2>
+                    <p class="dest-description">
+                        "El Puente de los Incas" — a 88 km de Cochabamba, Incachaca se encuentra en la zona de transición
+                        entre los Andes y el trópico. Un antiguo camino inca te guía a través del bosque de niebla,
+                        con cascadas impresionantes, piscinas naturales de aguas cristalinas y una historia que data de
+                        siglos. Una aventura que toda pareja debe vivir.
+                    </p>
+                    <a href="#incachaca-puntos" class="btn-primary btn-sm btn-green">
+                        <i class="fas fa-shoe-prints"></i> &nbsp; Ver las 5 Paradas
+                    </a>
+                    <a href="tour-incachaca.html" class="btn-primary btn-sm btn-tour" target="_blank">
+                        <i class="fas fa-vr-cardboard"></i> &nbsp; Tour Virtual 360°
+                    </a>
+                </div>
+                <div class="dest-image-container" id="img-incachaca">
+                    <img src="" alt="Incachaca - Bosque de niebla">
+                    <div class="img-fallback dest-image-placeholder">
+                        <i class="fas fa-camera"></i>
+                        <span>Imagen de Incachaca</span>
+                        <span class="img-note">Agrega tu imagen aquí</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-grid fade-up">
+                <div class="info-card">
+                    <div class="info-card-icon icon-green"><i class="fas fa-clock"></i></div>
+                    <h4>Duración</h4>
+                    <p>Full Day</p>
+                    <div class="detail">6 - 8 horas de recorrido</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-green"><i class="fas fa-ticket-alt"></i></div>
+                    <h4>Entrada</h4>
+                    <p>Bs 10 por persona</p>
+                    <div class="detail">Acceso al circuito completo</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-teal"><i class="fas fa-mountain"></i></div>
+                    <h4>Dificultad</h4>
+                    <p>Moderada</p>
+                    <div class="detail">Senderos con pendientes</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-blue"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Ubicación</h4>
+                    <p>88 km de Cochabamba</p>
+                    <div class="detail">Ruta al trópico, 2h aprox.</div>
+                </div>
+            </div>
+
+            <!-- 5 Paradas con imágenes -->
+            <div class="poi-section" id="incachaca-puntos">
+                <h3 class="poi-section-title">Las 5 Paradas del Recorrido</h3>
+                <p class="poi-section-sub">Sigue el antiguo camino inca a través del bosque de niebla</p>
+                <div class="poi-list fade-up">
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Puente Colgante">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-green">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-green">1</div>
+                            <div class="poi-content">
+                                <h4>Puente Colgante</h4>
+                                <p>El punto de inicio del recorrido. Un emocionante puente colgante sobre el río que marca el comienzo de la aventura. Perfecto para una foto de pareja con adrenalina.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Velo de la Novia">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-green">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-green">2</div>
+                            <div class="poi-content">
+                                <h4>Velo de la Novia</h4>
+                                <p>Una impresionante cascada cuya caída de agua forma un velo delicado entre la vegetación. Un lugar romántico e ideal para fotos de pareja.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Hidroeléctrica Abandonada">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-green">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-green">3</div>
+                            <div class="poi-content">
+                                <h4>Hidroeléctrica Abandonada</h4>
+                                <p>La primera planta hidroeléctrica de Cochabamba, hoy en ruinas entre la naturaleza. Maquinaria original de principios del siglo XX en un ambiente misterioso y fascinante.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Baño de Ñustas">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-green">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-green">4</div>
+                            <div class="poi-content">
+                                <h4>Baño de Ñustas</h4>
+                                <p>Piscinas naturales de aguas cristalinas y turquesas. El lugar perfecto para refrescarse en pareja tras la caminata por el sendero.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="poi-card">
+                        <div class="poi-card-img">
+                            <img src="" alt="Mirador de Incachaca">
+                            <div class="img-fallback poi-img-placeholder poi-placeholder-green">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="poi-card-body">
+                            <div class="poi-number poi-green">5</div>
+                            <div class="poi-content">
+                                <h4>Mirador de Incachaca</h4>
+                                <p>El punto más alto del recorrido con vista panorámica de todo el valle. Desde aquí se aprecia la inmensidad del bosque de niebla y las montañas circundantes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINO 3: DIN KONG PARK
+         ============================================================ -->
+    <section class="destination" id="dinkong">
+        <div class="destination-number">03</div>
+        <div class="destination-container">
+
+            <div class="destination-header fade-up">
+                <div>
+                    <span class="dest-tag tag-orange"><i class="fas fa-star"></i> &nbsp; Resort & Diversión</span>
+                    <h2 class="dest-title">Din Kong Park</h2>
+                    <p class="dest-description">
+                        El broche de oro del circuito. Din Kong Resort Park es un complejo de diversión completo
+                        con piscinas, hospedaje, restaurantes y juegos interactivos. El destino ideal para que
+                        las parejas cierren su día con relax, diversión y buena comida en un ambiente tropical.
+                    </p>
+                    <a href="#dinkong-servicios" class="btn-primary btn-sm btn-orange">
+                        <i class="fas fa-concierge-bell"></i> &nbsp; Ver Servicios
+                    </a>
+                    <a href="tour-index.html" class="btn-primary btn-sm btn-tour" target="_blank">
+                        <i class="fas fa-cube"></i> &nbsp; Tour Virtual 3D
+                    </a>
+                </div>
+                <div class="dest-image-container" id="img-dinkong">
+                    <img src="" alt="Din Kong Park - Resort">
+                    <div class="img-fallback dest-image-placeholder">
+                        <i class="fas fa-camera"></i>
+                        <span>Imagen de Din Kong Park</span>
+                        <span class="img-note">Agrega tu imagen aquí</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-grid fade-up">
+                <div class="info-card">
+                    <div class="info-card-icon icon-orange"><i class="fas fa-clock"></i></div>
+                    <h4>Horario</h4>
+                    <p>9:00 AM - 8:00 PM</p>
+                    <div class="detail">Todos los días</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-orange"><i class="fas fa-ticket-alt"></i></div>
+                    <h4>Entrada</h4>
+                    <p>Consultar precios</p>
+                    <div class="detail">Varía según actividad</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-blue"><i class="fas fa-phone"></i></div>
+                    <h4>Reservas</h4>
+                    <p>739 99995 / 698 57534</p>
+                    <div class="detail">WhatsApp disponible</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon icon-red"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Ubicación</h4>
+                    <p>Trans 8 de Marzo</p>
+                    <div class="detail">Shinahota, Cochabamba</div>
+                </div>
+            </div>
+
+            <!-- Servicios con imágenes -->
+            <div class="poi-section" id="dinkong-servicios">
+                <h3 class="poi-section-title">Todo lo que Din Kong Ofrece</h3>
+                <p class="poi-section-sub">Un resort completo para cerrar tu circuito con la mejor experiencia</p>
+                <div class="services-grid fade-up">
+
+                    <div class="service-card">
+                        <div class="service-card-img pool">
+                            <img src="" alt="Piscinas Din Kong Park">
+                            <div class="img-fallback service-img-fallback">
+                                <i class="fas fa-swimming-pool"></i>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h4>Piscinas</h4>
+                            <p>Múltiples piscinas para adultos con ambiente tropical. Zona de relax y diversión acuática.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Piscinas temperadas</li>
+                                <li><i class="fas fa-check-circle"></i> Toboganes acuáticos</li>
+                                <li><i class="fas fa-check-circle"></i> Zona de descanso con tumbonas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-img hotel">
+                            <img src="" alt="Hotel Din Kong Park">
+                            <div class="img-fallback service-img-fallback">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h4>Hotel & Hospedaje</h4>
+                            <p>Habitaciones cómodas para parejas que deseen extender su estadía en el resort.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Habitaciones privadas</li>
+                                <li><i class="fas fa-check-circle"></i> Cabañas para parejas</li>
+                                <li><i class="fas fa-check-circle"></i> Check-in flexible</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-img restaurant">
+                            <img src="" alt="Restaurantes Din Kong Park">
+                            <div class="img-fallback service-img-fallback">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h4>Restaurantes</h4>
+                            <p>Gastronomía variada con platos típicos bolivianos y cocina internacional.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Comida típica boliviana</li>
+                                <li><i class="fas fa-check-circle"></i> Parrilladas y asados</li>
+                                <li><i class="fas fa-check-circle"></i> Bebidas y cócteles</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-img games">
+                            <img src="" alt="Juegos Din Kong Park">
+                            <div class="img-fallback service-img-fallback">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h4>Juegos Interactivos</h4>
+                            <p>Actividades y juegos para todas las edades. Entretenimiento garantizado para parejas.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Juegos al aire libre</li>
+                                <li><i class="fas fa-check-circle"></i> Actividades deportivas</li>
+                                <li><i class="fas fa-check-circle"></i> Zona de recreación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TIPS PARA PAREJAS ===== -->
+    <section class="tips-section" id="tips">
+        <span class="section-label section-label-light"><i class="fas fa-heart"></i> &nbsp; Para Parejas</span>
+        <h2 class="section-title">Tips para tu Aventura</h2>
+        <p class="section-subtitle">Recomendaciones para disfrutar al máximo el circuito en pareja</p>
+        <div class="tips-grid fade-up">
+            <div class="tip-card">
+                <i class="fas fa-sun"></i>
+                <h4>Sal temprano</h4>
+                <p>Comienza tu recorrido a las 7:00 AM desde Cochabamba para aprovechar al máximo el día y la luz natural.</p>
+            </div>
+            <div class="tip-card">
+                <i class="fas fa-tshirt"></i>
+                <h4>Ropa adecuada</h4>
+                <p>Lleva ropa cómoda, zapatos de trekking para Incachaca y traje de baño para Din Kong Park.</p>
+            </div>
+            <div class="tip-card">
+                <i class="fas fa-camera-retro"></i>
+                <h4>Captura momentos</h4>
+                <p>Cada parada tiene spots perfectos para fotos. No olvides tu cámara o celular con buena batería.</p>
+            </div>
+            <div class="tip-card">
+                <i class="fas fa-wallet"></i>
+                <h4>Presupuesto estimado</h4>
+                <p>Para dos personas: transporte Bs 40-60, entradas Bs 30, comida Bs 120-150, actividades Bs 40-60. Total aprox: Bs 250-300.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PAQUETES TURÍSTICOS
+         ============================================================ -->
+    <section class="paquetes-section" id="paquetes">
+        <span class="section-label"><i class="fas fa-suitcase-rolling"></i> &nbsp; Paquetes</span>
+        <h2 class="section-title">Paquetes Turísticos</h2>
+        <p class="section-subtitle">Experiencias personalizadas para cada tipo de pareja. Elige tu aventura ideal.</p>
+
+        <!-- Tabs de categorías -->
+        <div class="pkg-tabs fade-up">
+            <button class="pkg-tab active" data-category="aventura"><i class="fas fa-mountain"></i> Aventura</button>
+            <button class="pkg-tab" data-category="romantico"><i class="fas fa-heart"></i> Romántico</button>
+            <button class="pkg-tab" data-category="gastronomia"><i class="fas fa-utensils"></i> Gastronomía</button>
+            <button class="pkg-tab" data-category="exploracion"><i class="fas fa-compass"></i> Exploración</button>
+        </div>
+
+        <!-- ===== AVENTURA ===== -->
+        <div class="pkg-category active" id="cat-aventura">
+            <div class="pkg-grid fade-up">
+                <div class="pkg-card pkg-nivel-1">
+                    <div class="pkg-header pkg-aventura">
+                        <span class="pkg-badge">1 día</span>
+                        <h3>Pulso Salvaje</h3>
+                        <p class="pkg-tagline">Para parejas que buscan salir de la rutina</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Recorrido por 1 lugar de la ruta</li>
+                            <li><i class="fas fa-check"></i> Caminata por senderos naturales</li>
+                            <li><i class="fas fa-check"></i> Visita a cascadas y puentes</li>
+                            <li><i class="fas fa-check"></i> Paradas en miradores fotográficos</li>
+                            <li><i class="fas fa-check"></i> Mapa digital de la ruta</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-2 pkg-featured">
+                    <div class="pkg-ribbon">Popular</div>
+                    <div class="pkg-header pkg-aventura">
+                        <span class="pkg-badge">2 días</span>
+                        <h3>Aventura Sin Límites</h3>
+                        <p class="pkg-tagline">No apto para corazones tranquilos</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Trekking por senderos de Incachaca</li>
+                            <li><i class="fas fa-check"></i> Exploración de cascadas y puentes</li>
+                            <li><i class="fas fa-check"></i> Moto acuática en Laguna Corani</li>
+                            <li><i class="fas fa-check"></i> Actividades en Din Kong Park</li>
+                            <li><i class="fas fa-check"></i> Sesión fotográfica en paisajes</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-bolt"></i> Desafíos, aventura y naturaleza</div>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-3">
+                    <div class="pkg-header pkg-aventura">
+                        <span class="pkg-badge">2 días + 1 noche</span>
+                        <h3>Proyecto Vértigo</h3>
+                        <p class="pkg-tagline">"Adrenalove" — donde adrenalina y amor se encuentran</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Moto acuática en Laguna Corani</li>
+                            <li><i class="fas fa-check"></i> Caminatas por senderos de montaña</li>
+                            <li><i class="fas fa-check"></i> Exploración de zonas poco visitadas</li>
+                            <li><i class="fas fa-check"></i> Circuito completo en Din Kong Park</li>
+                            <li><i class="fas fa-check"></i> Puentes colgantes y tirolesa</li>
+                            <li><i class="fas fa-check"></i> Kit de supervivencia turística</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-fire"></i> Adrenalina, resistencia y equipo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== ROMÁNTICO ===== -->
+        <div class="pkg-category" id="cat-romantico">
+            <div class="pkg-grid fade-up">
+                <div class="pkg-card pkg-nivel-1">
+                    <div class="pkg-header pkg-romantico">
+                        <span class="pkg-badge">1 día</span>
+                        <h3>Eclipse para Dos</h3>
+                        <p class="pkg-tagline">Momentos especiales en lugares tranquilos</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> 1 lugar de la ruta a elección</li>
+                            <li><i class="fas fa-check"></i> Decoración romántica y almuerzo</li>
+                            <li><i class="fas fa-check"></i> Visita a miradores románticos</li>
+                            <li><i class="fas fa-check"></i> Picnic o fogata en pareja</li>
+                            <li><i class="fas fa-check"></i> Observación del atardecer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-2 pkg-featured">
+                    <div class="pkg-ribbon">Popular</div>
+                    <div class="pkg-header pkg-romantico">
+                        <span class="pkg-badge">2 días</span>
+                        <h3>Idilio Perfecto</h3>
+                        <p class="pkg-tagline">Escapada de fin de semana romántica</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Elección de lugares de la ruta</li>
+                            <li><i class="fas fa-check"></i> Miradores más románticos de Corani</li>
+                            <li><i class="fas fa-check"></i> Picnic con decoración romántica</li>
+                            <li><i class="fas fa-check"></i> Ruta fotográfica para parejas</li>
+                            <li><i class="fas fa-check"></i> Álbum digital de recuerdos</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-heart"></i> Romance, tranquilidad y conexión</div>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-3">
+                    <div class="pkg-header pkg-romantico">
+                        <span class="pkg-badge">3 días</span>
+                        <h3>Latidos en Niebla</h3>
+                        <p class="pkg-tagline">Pedidas de mano, aniversarios y fechas especiales</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Decoración romántica en mirador</li>
+                            <li><i class="fas fa-check"></i> Sesión de fotos y álbum</li>
+                            <li><i class="fas fa-check"></i> Desayuno, almuerzo y cena especial</li>
+                            <li><i class="fas fa-check"></i> Recorrido privado por la ruta</li>
+                            <li><i class="fas fa-check"></i> Acceso a piscina, jacuzzi y hotel</li>
+                            <li><i class="fas fa-check"></i> Sorpresa personalizada</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-gem"></i> Celebración y momentos únicos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== GASTRONOMÍA ===== -->
+        <div class="pkg-category" id="cat-gastronomia">
+            <div class="pkg-grid fade-up">
+                <div class="pkg-card pkg-nivel-1">
+                    <div class="pkg-header pkg-gastro">
+                        <span class="pkg-badge">1 día</span>
+                        <h3>Ruta del Antojo</h3>
+                        <p class="pkg-tagline">Descubre la gastronomía local y regional</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Recorrido por restaurantes recomendados</li>
+                            <li><i class="fas fa-check"></i> Degustación de platos típicos</li>
+                            <li><i class="fas fa-check"></i> Cena recomendada por chef</li>
+                            <li><i class="fas fa-check"></i> Guía digital de comidas</li>
+                            <li><i class="fas fa-check"></i> Mapa digital de restaurantes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-2 pkg-featured">
+                    <div class="pkg-ribbon">Popular</div>
+                    <div class="pkg-header pkg-gastro">
+                        <span class="pkg-badge">2 días</span>
+                        <h3>Aventura Paladar</h3>
+                        <p class="pkg-tagline">Cómplices del sabor</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Desayuno buffet</li>
+                            <li><i class="fas fa-check"></i> Recorrido gastronómico por la ruta</li>
+                            <li><i class="fas fa-check"></i> Degustación de platos y bebidas</li>
+                            <li><i class="fas fa-check"></i> Experiencia culinaria en Corani e Incachaca</li>
+                            <li><i class="fas fa-check"></i> Guía digital de sabores locales</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-utensils"></i> Descubrir la cultura por la comida</div>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-3">
+                    <div class="pkg-header pkg-gastro">
+                        <span class="pkg-badge">3 días</span>
+                        <h3>Amor a la Carta</h3>
+                        <p class="pkg-tagline">Sabores exóticos, clásico y elegante</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Desayuno y almuerzo buffet</li>
+                            <li><i class="fas fa-check"></i> Cata de vinos, cerveza artesanal y cócteles</li>
+                            <li><i class="fas fa-check"></i> Cocina en vivo en ambientes naturales</li>
+                            <li><i class="fas fa-check"></i> Cenas temáticas privadas con fogata</li>
+                            <li><i class="fas fa-check"></i> Ranking mejores platos de la ruta</li>
+                            <li><i class="fas fa-check"></i> Certificado "Explorador Gastronómico"</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-wine-glass-alt"></i> Tradición, cultura y sazón</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== EXPLORACIÓN ===== -->
+        <div class="pkg-category" id="cat-exploracion">
+            <div class="pkg-grid fade-up">
+                <div class="pkg-card pkg-nivel-1">
+                    <div class="pkg-header pkg-explora">
+                        <span class="pkg-badge">1 día</span>
+                        <h3>Travesía Juntos</h3>
+                        <p class="pkg-tagline">Conoce a profundidad los 3 destinos</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> 1 lugar de la ruta a elección</li>
+                            <li><i class="fas fa-check"></i> Recorrido por atractivos principales</li>
+                            <li><i class="fas fa-check"></i> Kit de snack y primeros auxilios</li>
+                            <li><i class="fas fa-check"></i> Información histórica y cultural</li>
+                            <li><i class="fas fa-check"></i> Mapa digital interactivo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-2 pkg-featured">
+                    <div class="pkg-ribbon">Popular</div>
+                    <div class="pkg-header pkg-explora">
+                        <span class="pkg-badge">2 días</span>
+                        <h3>Rastreadores de Historias</h3>
+                        <p class="pkg-tagline">Cada detalle y leyenda de los destinos</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Recorrido completo por Corani + fogata</li>
+                            <li><i class="fas fa-check"></i> Visita guiada a Incachaca + fauna y flora</li>
+                            <li><i class="fas fa-check"></i> Exploración de Din Kong Park</li>
+                            <li><i class="fas fa-check"></i> Historia, cultura y datos curiosos</li>
+                            <li><i class="fas fa-check"></i> Regalos de exploración</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-book-open"></i> Aprendizaje y descubrimiento</div>
+                    </div>
+                </div>
+
+                <div class="pkg-card pkg-nivel-3">
+                    <div class="pkg-header pkg-explora">
+                        <span class="pkg-badge">3 días + 1 noche</span>
+                        <h3>Más Allá del Mapa</h3>
+                        <p class="pkg-tagline">Ecoturismo: botas de montaña antes que hotel de lujo</p>
+                    </div>
+                    <div class="pkg-body">
+                        <ul class="pkg-includes">
+                            <li><i class="fas fa-check"></i> Sitios escondidos y miradores especiales</li>
+                            <li><i class="fas fa-check"></i> Experto guía con leyendas locales</li>
+                            <li><i class="fas fa-check"></i> Senderos exclusivos, lagunas, cascadas</li>
+                            <li><i class="fas fa-check"></i> Camping, fogatas y observación de flora</li>
+                            <li><i class="fas fa-check"></i> Equipos: brújula, largavistas, cascos</li>
+                            <li><i class="fas fa-check"></i> Regalos de exploración</li>
+                        </ul>
+                        <div class="pkg-experience"><i class="fas fa-leaf"></i> Naturaleza, exploración y aventura</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Propuesta diferenciadora -->
+        <div class="pkg-diferenciador fade-up">
+            <h4>Todos los paquetes incluyen</h4>
+            <div class="pkg-extras">
+                <span><i class="fas fa-mobile-alt"></i> Acceso web</span>
+                <span><i class="fas fa-map"></i> Mapa digital</span>
+                <span><i class="fas fa-camera"></i> Puntos foto</span>
+                <span><i class="fas fa-heart"></i> Spots románticos</span>
+                <span><i class="fas fa-umbrella-beach"></i> Zonas picnic</span>
+                <span><i class="fas fa-qrcode"></i> Código QR</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CLIMA EN TIEMPO REAL
+         ============================================================ -->
+    <section class="clima-section" id="clima">
+        <span class="section-label section-label-light"><i class="fas fa-cloud-sun"></i> &nbsp; Clima</span>
+        <h2 class="section-title" style="color:#fff;">Clima en Tiempo Real</h2>
+        <p class="section-subtitle" style="color:var(--verde-suave);">Consulta el pronóstico antes de viajar. Datos actualizados automáticamente.</p>
+
+        <!-- Semáforo climático -->
+        <div class="clima-semaforo fade-up" id="clima-semaforo">
+            <div class="semaforo-card semaforo-verde">
+                <div class="semaforo-luz"></div>
+                <h4>Clima Favorable</h4>
+                <p>Ideal para actividades al aire libre</p>
+            </div>
+            <div class="semaforo-card semaforo-amarillo">
+                <div class="semaforo-luz"></div>
+                <h4>Precaución</h4>
+                <p>Posibles lluvias o neblina</p>
+            </div>
+            <div class="semaforo-card semaforo-rojo">
+                <div class="semaforo-luz"></div>
+                <h4>No Recomendado</h4>
+                <p>Lluvias intensas o riesgo</p>
+            </div>
+        </div>
+
+        <!-- Cards de clima por destino -->
+        <div class="clima-grid fade-up" id="clima-grid">
+            <div class="clima-card" id="clima-corani">
+                <div class="clima-card-header clima-h-blue">
+                    <i class="fas fa-water"></i>
+                    <h4>Laguna Corani</h4>
+                    <span class="clima-semaforo-dot" id="sem-corani"></span>
+                </div>
+                <div class="clima-card-body">
+                    <div class="clima-temp" id="temp-corani">--°C</div>
+                    <div class="clima-desc" id="desc-corani">Cargando...</div>
+                    <div class="clima-details">
+                        <div><i class="fas fa-tint"></i> <span id="rain-corani">--%</span></div>
+                        <div><i class="fas fa-wind"></i> <span id="wind-corani">-- km/h</span></div>
+                        <div><i class="fas fa-sun"></i> <span id="sunrise-corani">--:--</span></div>
+                        <div><i class="fas fa-moon"></i> <span id="sunset-corani">--:--</span></div>
+                    </div>
+                    <div class="clima-reco" id="reco-corani">
+                        <strong>Recomendación:</strong> Temperaturas frescas. Llevar abrigo ligero.
+                    </div>
+                </div>
+            </div>
+
+            <div class="clima-card" id="clima-incachaca">
+                <div class="clima-card-header clima-h-green">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Incachaca</h4>
+                    <span class="clima-semaforo-dot" id="sem-incachaca"></span>
+                </div>
+                <div class="clima-card-body">
+                    <div class="clima-temp" id="temp-incachaca">--°C</div>
+                    <div class="clima-desc" id="desc-incachaca">Cargando...</div>
+                    <div class="clima-details">
+                        <div><i class="fas fa-tint"></i> <span id="rain-incachaca">--%</span></div>
+                        <div><i class="fas fa-wind"></i> <span id="wind-incachaca">-- km/h</span></div>
+                        <div><i class="fas fa-sun"></i> <span id="sunrise-incachaca">--:--</span></div>
+                        <div><i class="fas fa-moon"></i> <span id="sunset-incachaca">--:--</span></div>
+                    </div>
+                    <div class="clima-reco" id="reco-incachaca">
+                        <strong>Recomendación:</strong> Zona húmeda. Impermeable y calzado antideslizante.
+                    </div>
+                </div>
+            </div>
+
+            <div class="clima-card" id="clima-dinkong">
+                <div class="clima-card-header clima-h-orange">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h4>Din Kong Park</h4>
+                    <span class="clima-semaforo-dot" id="sem-dinkong"></span>
+                </div>
+                <div class="clima-card-body">
+                    <div class="clima-temp" id="temp-dinkong">--°C</div>
+                    <div class="clima-desc" id="desc-dinkong">Cargando...</div>
+                    <div class="clima-details">
+                        <div><i class="fas fa-tint"></i> <span id="rain-dinkong">--%</span></div>
+                        <div><i class="fas fa-wind"></i> <span id="wind-dinkong">-- km/h</span></div>
+                        <div><i class="fas fa-sun"></i> <span id="sunrise-dinkong">--:--</span></div>
+                        <div><i class="fas fa-moon"></i> <span id="sunset-dinkong">--:--</span></div>
+                    </div>
+                    <div class="clima-reco" id="reco-dinkong">
+                        <strong>Recomendación:</strong> Revisar pronóstico antes de asistir. Llevar bloqueador solar.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR del clima -->
+        <div class="clima-qr fade-up">
+            <i class="fas fa-qrcode"></i>
+            <p>Consulta el clima antes de viajar — escanea el código QR en tu guía impresa</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Circuito Turístico del Valle</div>
+            <p class="footer-desc">Una propuesta para impulsar el turismo de parejas en Cochabamba, Bolivia.</p>
+            <div class="footer-links">
+                <a href="#ruta">La Ruta</a>
+                <a href="#corani">Laguna Corani</a>
+                <a href="#incachaca">Incachaca</a>
+                <a href="#dinkong">Din Kong Park</a>
+                <a href="#paquetes">Paquetes</a>
+                <a href="#clima">Clima</a>
+                <a href="#tips">Tips</a>
+            </div>
+            <hr class="footer-divider">
+            <p class="footer-copy">Proyecto académico — Instituto de Formación · Cochabamba, Bolivia · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT EXTERNO ===== -->
+    <script src="script.js"></script>
+
+</body>
+</html>
